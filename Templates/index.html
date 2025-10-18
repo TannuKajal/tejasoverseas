@@ -1,0 +1,158 @@
+{% extends "base.html" %}
+{% block content %}
+
+<!-- HERO CAROUSEL -->
+<div id="home" class="carousel slide carousel-fade" data-bs-ride="carousel" data-bs-interval="5000">
+  <div class="carousel-inner">
+
+    <div class="carousel-item active" style="height:90vh; background: url('{{ url_for('static', filename='1.png') }}') center/cover no-repeat;">
+      <div class="carousel-caption d-flex flex-column justify-content-center h-100 text-start">
+        <div class="container">
+          <h1 class="display-4 fw-bold text-white">Study in Italy with Confidence</h1>
+          <p class="lead text-white">Admission guidance, documentation, and visa support — from start to departure.</p>
+          <a href="{{ url_for('visa_application_assistance') }}" class="btn btn-warning btn-lg">Explore Italy Study Visa</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="carousel-item" style="height:90vh; background: url('{{ url_for('static', filename='6.png') }}') center/cover no-repeat;">
+      <div class="carousel-caption d-flex flex-column justify-content-center h-100 text-start">
+        <div class="container">
+          <h1 class="display-4 fw-bold text-white">Explore UAE with Ease</h1>
+          <p class="lead text-white">Fast UAE tourist visas — reliable and transparent assistance.</p>
+          <a href="{{ url_for('uae_tourist_visa') }}" class="btn btn-primary btn-lg">Apply for UAE Visa</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="carousel-item" style="height:90vh; background: url('{{ url_for('static', filename='5.png') }}') center/cover no-repeat;">
+      <div class="carousel-caption d-flex flex-column justify-content-center h-100 text-start">
+        <div class="container">
+          <h1 class="display-4 fw-bold text-white">We Make Travel Simple</h1>
+          <p class="lead text-white">Tickets, translations, appointments — we handle it all.</p>
+          <a href="{{ url_for('index') }}#services" class="btn btn-light btn-lg">View All Services</a>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <button class="carousel-control-prev" type="button" data-bs-target="#home" data-bs-slide="prev">
+    <span class="carousel-control-prev-icon"></span>
+  </button>
+  <button class="carousel-control-next" type="button" data-bs-target="#home" data-bs-slide="next">
+    <span class="carousel-control-next-icon"></span>
+  </button>
+
+  <div class="carousel-indicators">
+    <button type="button" data-bs-target="#home" data-bs-slide-to="0" class="active"></button>
+    <button type="button" data-bs-target="#home" data-bs-slide-to="1"></button>
+    <button type="button" data-bs-target="#home" data-bs-slide-to="2"></button>
+  </div>
+</div>
+
+<!-- SERVICES -->
+<section id="services" class="py-5">
+  <div class="container">
+    <h2 class="text-center mb-4">Our Services</h2>
+    <div class="row g-4">
+
+      <!-- Italy Study Visa Services -->
+      <div class="col-md-4">
+        <a href="{{ url_for('admission_guidance') }}" class="text-decoration-none text-dark">
+          <div class="card service-card h-100 p-3">
+            <h5>Admission Guidance</h5>
+            <p class="mb-0 text-muted">Find the right course & university in Italy for you.</p>
+          </div>
+        </a>
+      </div>
+
+      <div class="col-md-4">
+        <a href="{{ url_for('document_preparation') }}" class="text-decoration-none text-dark">
+          <div class="card service-card h-100 p-3">
+            <h5>Document Preparation</h5>
+            <p class="mb-0 text-muted">We prepare your transcripts, letters, and certificates accurately.</p>
+          </div>
+        </a>
+      </div>
+
+      <div class="col-md-4">
+        <a href="{{ url_for('visa_application_assistance') }}" class="text-decoration-none text-dark">
+          <div class="card service-card h-100 p-3">
+            <h5>Visa Application Assistance</h5>
+            <p class="mb-0 text-muted">Step-by-step support with paperwork and embassy appointments.</p>
+          </div>
+        </a>
+      </div>
+
+      <!-- Other Services -->
+      <div class="col-md-4">
+        <a href="{{ url_for('nulla_osta') }}" class="text-decoration-none text-dark">
+          <div class="card service-card h-100 p-3">
+            <h5>Nulla Osta Appointments</h5>
+            <p class="mb-0 text-muted">Assistance scheduling and document preparation.</p>
+          </div>
+        </a>
+      </div>
+
+      <div class="col-md-4">
+        <a href="{{ url_for('passport_services') }}" class="text-decoration-none text-dark">
+          <div class="card service-card h-100 p-3">
+            <h5>Passport Services</h5>
+            <p class="mb-0 text-muted">Renewals, new applications and appointment help.</p>
+          </div>
+        </a>
+      </div>
+
+      <div class="col-md-4">
+        <a href="{{ url_for('uae_tourist_visa') }}" class="text-decoration-none text-dark">
+          <div class="card service-card h-100 p-3">
+            <h5>UAE Tourist Visa</h5>
+            <p class="mb-0 text-muted">Quick approvals and trusted travel consultancy.</p>
+          </div>
+        </a>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- WHY CHOOSE US -->
+<section class="py-5 bg-white">
+  <div class="container text-center">
+    <h3 class="mb-3">Why Choose Tejas Overseas?</h3>
+    <div class="row g-3 justify-content-center">
+      <div class="col-md-3">
+        <div class="p-3 border rounded">
+          <h4>1000+</h4>
+          <p class="mb-0 text-muted">Happy Clients</p>
+        </div>
+      </div>
+      <div class="col-md-3">
+        <div class="p-3 border rounded">
+          <h4>Fast Processing</h4>
+          <p class="mb-0 text-muted">Transparent timelines & updates</p>
+        </div>
+      </div>
+      <div class="col-md-3">
+        <div class="p-3 border rounded">
+          <h4>Expert Guidance</h4>
+          <p class="mb-0 text-muted">Experienced consultants & documentation help</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section id="about" class="py-5">
+  <div class="container text-center">
+    <h2>About Us</h2>
+    <p class="mx-auto text-muted" style="max-width:900px;">
+      Tejas Overseas guides students and travelers through visa and travel processes with care and clarity.
+      We prepare documents, book appointments, and support students heading to Italy as well as tourists visiting the UAE.
+    </p>
+  </div>
+</section>
+
+{% endblock %}

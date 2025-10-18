@@ -1,0 +1,71 @@
+{% extends "base.html" %}
+{% block content %}
+
+<section class="py-5" style="background: #f8f9fa;">
+  <div class="container">
+    <!-- Header -->
+    <div class="text-center mb-5">
+      <h2 class="fw-bold">Visa Application Assistance</h2>
+      <p class="text-muted fs-5">Step-by-step support to ensure smooth visa approval</p>
+    </div>
+
+    <!-- Main Content -->
+    <div class="row justify-content-center">
+      <div class="col-lg-10">
+        <p class="fs-6 mb-4 text-center">
+          Applying for a visa can be confusing and stressful. At <strong>Tejas Overseas</strong>, we simplify the process with expert guidance, ensuring your application is complete and submitted correctly. From document preparation to embassy appointments, we are with you every step of the way.
+        </p>
+
+        <!-- What We Offer -->
+        <div class="mb-5">
+          <h5 class="fw-bold mb-3 text-center">What We Offer</h5>
+          <div class="row g-3 justify-content-center">
+            {% for item in [
+              {'title': 'Document Checklist & Preparation', 'desc': 'Ensure you have all required documents prepared correctly.'},
+              {'title': 'Form Filling Assistance', 'desc': 'Step-by-step guidance for filling out visa application forms.'},
+              {'title': 'Embassy Appointment Booking', 'desc': 'We help you secure an appointment at the embassy.'},
+              {'title': 'Interview Preparation', 'desc': 'Tips and mock sessions to confidently handle visa interviews.'},
+              {'title': 'Follow-up & Updates', 'desc': 'Regular updates on your application status until approval.'}
+            ] %}
+            <div class="col-md-6">
+              <div class="p-3 mb-3" style="background: #ffffff; border-radius: 8px; box-shadow: 0 4px 12px rgba(0,0,0,0.08);">
+                <h6 class="fw-bold"><i class="bi bi-check-circle-fill text-success me-2"></i>{{ item.title }}</h6>
+                <p class="mb-0">{{ item.desc }}</p>
+              </div>
+            </div>
+            {% endfor %}
+          </div>
+        </div>
+
+        <!-- Why Choose Us -->
+        <div class="mb-5">
+          <h5 class="fw-bold mb-3 text-center">Why Choose Us</h5>
+          <div class="row g-3 justify-content-center">
+            {% for reason in [
+              {'title': 'Experienced Consultants', 'desc': 'Expert in handling visa applications for multiple countries.'},
+              {'title': 'Dedicated Support', 'desc': 'Assistance at every stage of your visa process.'},
+              {'title': 'Proven Success', 'desc': 'High approval rate with smooth processing for our clients.'}
+            ] %}
+            <div class="col-md-4">
+              <div class="p-3 text-center" style="background: #ffffff; border-radius: 8px; box-shadow: 0 4px 12px rgba(0,0,0,0.08);">
+                <h6 class="fw-bold">{{ reason.title }}</h6>
+                <p class="mb-0">{{ reason.desc }}</p>
+              </div>
+            </div>
+            {% endfor %}
+          </div>
+        </div>
+
+        <!-- Call to Action -->
+        <div class="text-center">
+          <a href="https://wa.me/919079007703?text=Hello%20Tejas%20Overseas,%20I%20need%20guidance%20for%20visa%20application."
+             target="_blank"
+             class="btn btn-success btn-lg">Get Visa Assistance</a>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</section>
+
+{% endblock %}
