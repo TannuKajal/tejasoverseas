@@ -1,0 +1,103 @@
+{% extends "base.html" %}
+{% block content %}
+
+<section class="py-5" style="background: #f8f9fa;">
+  <div class="container">
+    <!-- Header -->
+    <div class="text-center mb-5">
+      <h2 class="fw-bold text-primary">Domestic Nulla Osta Appointment</h2>
+      <p class="text-muted fs-5">Structured guidance for caregivers and domestic workers seeking legal employment in Italy.</p>
+    </div>
+
+    <!-- Hero Image -->
+    <div class="text-center mb-5">
+      <img src="{{ url_for('static', filename='images/domestic-hero.jpg') }}" alt="Domestic Work Visa Italy" class="img-fluid rounded shadow" style="max-height:400px;">
+    </div>
+
+    <!-- Intro -->
+    <div class="col-lg-10 mx-auto text-center mb-5">
+      <p class="fs-6">
+        The <strong>Domestic Nulla Osta</strong> is a government-issued authorization required for foreign nationals who wish to work legally in Italian households, including roles such as caregivers, nannies, and domestic workers.
+        At <strong>Tejas Overseas</strong>, we offer professional end-to-end assistance — from verifying eligibility and reviewing employment contracts to scheduling appointments and facilitating embassy compliance. Our goal is a smooth, transparent, and stress-free process for both employers and employees.
+      </p>
+    </div>
+
+    <!-- Services -->
+    <div class="mb-5">
+      <h5 class="fw-bold mb-4 text-center">Our Domestic Nulla Osta Services</h5>
+      <div class="row g-4 justify-content-center">
+        <!-- Document Verification -->
+        <div class="col-md-10">
+          <div class="d-flex align-items-start bg-white p-4 rounded-3 shadow-sm">
+            <i class="bi bi-file-check-fill fs-1 text-primary me-3"></i>
+            <div>
+              <h6 class="fw-bold mb-2">Comprehensive Document Review</h6>
+              <p class="mb-0">We carefully examine employment contracts, identification, and supporting documents to ensure full compliance with Italian law and embassy requirements.</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Online Pre-Registration -->
+        <div class="col-md-10">
+          <div class="d-flex align-items-start bg-white p-4 rounded-3 shadow-sm">
+            <i class="bi bi-laptop fs-1 text-primary me-3"></i>
+            <div>
+              <h6 class="fw-bold mb-2">Digital Application Assistance</h6>
+              <p class="mb-0">Step-by-step guidance through official online portals, ensuring your application is complete and submitted correctly without errors.</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Appointment Booking -->
+        <div class="col-md-10">
+          <div class="d-flex align-items-start bg-white p-4 rounded-3 shadow-sm">
+            <i class="bi bi-calendar-check-fill fs-1 text-primary me-3"></i>
+            <div>
+              <h6 class="fw-bold mb-2">Embassy Appointment Coordination</h6>
+              <p class="mb-0">We schedule appointments at relevant authorities and provide clear instructions to ensure a smooth approval process.</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Visa & Compliance -->
+        <div class="col-md-10">
+          <div class="d-flex align-items-start bg-white p-4 rounded-3 shadow-sm">
+            <i class="bi bi-passport-fill fs-1 text-primary me-3"></i>
+            <div>
+              <h6 class="fw-bold mb-2">Visa Preparation & Compliance</h6>
+              <p class="mb-0">Post Nulla Osta approval, we guide applicants in completing visa formalities, document submission, and embassy compliance checks for legal employment in Italy.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Professional Testimonials -->
+    <div class="mb-5">
+      <h5 class="fw-bold mb-4 text-center">Client Success Stories</h5>
+      <div class="row g-4 justify-content-center">
+        <div class="col-md-6">
+          <div class="p-4 bg-white rounded-3 shadow-sm">
+            <p class="fst-italic">“Tejas Overseas made the Domestic Nulla Osta process transparent and stress-free. Every step was explained clearly, and I felt supported throughout.”</p>
+            <p class="fw-bold mb-0">— Meera K., India</p>
+          </div>
+        </div>
+        <div class="col-md-6">
+          <div class="p-4 bg-white rounded-3 shadow-sm">
+            <p class="fst-italic">“Professional guidance and meticulous document checking ensured my application was flawless. Highly recommended.”</p>
+            <p class="fw-bold mb-0">— Rajesh P., India</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Call to Action -->
+    <div class="text-center">
+      <a href="https://wa.me/919079007703?text=Hello%20Tejas%20Overseas,%20I%20need%20assistance%20for%20Domestic%20Nulla%20Osta."
+         target="_blank"
+         class="btn btn-primary btn-lg">Book Professional Assistance</a>
+    </div>
+  </div>
+</section>
+
+{% endblock %}

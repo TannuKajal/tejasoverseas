@@ -31,6 +31,21 @@ def passport_services():
 def nulla_osta():
     return render_template("nulla_osta.html")
 
+# Seasonal Nulla Osta
+@app.route('/seasonal-nulla-osta')
+def seasonal_nulla_osta():
+    return render_template('seasonal_nulla_osta.html')
+
+# Domestic Nulla Osta
+@app.route('/domestic-nulla-osta')
+def domestic_nulla_osta():
+    return render_template('domestic_nulla_osta.html')
+
+# Family Reunion Nulla Osta
+@app.route('/family-nulla-osta')
+def family_nulla_osta():
+    return render_template('family_nulla_osta.html')
+
 @app.route("/contact")
 def contact():
     return render_template("contact.html")

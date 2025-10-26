@@ -1,61 +1,99 @@
 {% extends "base.html" %}
 {% block content %}
 
+<!-- HERO SECTION -->
+<section class="py-5" style="background: url('{{ url_for('static', filename='images/document_hero.jpg') }}') center/cover no-repeat; position: relative; min-height: 60vh;">
+  <div style="background: rgba(0,0,0,0.5); position: absolute; top:0; left:0; width:100%; height:100%;"></div>
+  <div class="container text-center text-white position-relative" style="z-index:2;">
+    <h1 class="display-5 fw-bold mb-3">Document Preparation</h1>
+    <p class="fs-5 mb-4">Accurate, verified, and compliant documentation for a seamless visa or admission process</p>
+    <a href="https://wa.me/919079007703?text=Hello%20Tejas%20Overseas,%20I%20need%20guidance%20for%20document%20preparation."
+       target="_blank"
+       class="btn btn-success btn-lg">Get Documents Prepared</a>
+  </div>
+</section>
+
+<!-- DOCUMENT PREPARATION TIMELINE -->
 <section class="py-5" style="background: #f8f9fa;">
   <div class="container">
-    <!-- Header -->
     <div class="text-center mb-5">
-      <h2 class="fw-bold">Document Preparation</h2>
-      <p class="text-muted fs-5">Accurate and complete documentation for a hassle-free visa process</p>
+      <h2 class="fw-bold">Our Document Preparation Process</h2>
+      <p class="text-muted fs-5">Professional handling of every document step to ensure accuracy and compliance</p>
     </div>
 
-    <!-- Main Content -->
-    <div class="row justify-content-center">
-      <div class="col-lg-8">
-        <p class="fs-6 mb-4">
-          At <strong>Tejas Overseas</strong>, we understand that well-prepared documents are the key to a successful application. Our experts ensure that every certificate, transcript, and letter meets the requirements of universities and embassies. Save time and avoid mistakes with our end-to-end support.
-        </p>
+    <div class="position-relative">
+      <!-- Vertical line -->
+      <div style="position:absolute; left:50%; transform:translateX(-50%); width:4px; height:100%; background:#dee2e6;"></div>
 
-        <!-- Services Offered -->
-        <div class="mb-4">
-          <h5 class="fw-bold mb-3">Our Document Preparation Services</h5>
-          <div class="row g-3">
-            <div class="col-md-12">
-              <div class="p-3 mb-3" style="background: #ffffff; border-radius: 8px; box-shadow: 0 4px 12px rgba(0,0,0,0.08);">
-                <h6 class="fw-bold"><i class="bi bi-file-earmark-text-fill text-primary me-2"></i>Transcripts & Academic Records</h6>
-                <p class="mb-0">We verify, translate, and format your academic documents for submission.</p>
-              </div>
-            </div>
-            <div class="col-md-12">
-              <div class="p-3 mb-3" style="background: #ffffff; border-radius: 8px; box-shadow: 0 4px 12px rgba(0,0,0,0.08);">
-                <h6 class="fw-bold"><i class="bi bi-file-earmark-fill text-primary me-2"></i>Letters & Certificates</h6>
-                <p class="mb-0">Recommendation letters, experience certificates, and other supporting documents prepared accurately.</p>
-              </div>
-            </div>
-            <div class="col-md-12">
-              <div class="p-3 mb-3" style="background: #ffffff; border-radius: 8px; box-shadow: 0 4px 12px rgba(0,0,0,0.08);">
-                <h6 class="fw-bold"><i class="bi bi-pencil-fill text-primary me-2"></i>Application Forms</h6>
-                <p class="mb-0">We guide you through filling forms correctly to avoid delays or rejections.</p>
-              </div>
-            </div>
-            <div class="col-md-12">
-              <div class="p-3 mb-3" style="background: #ffffff; border-radius: 8px; box-shadow: 0 4px 12px rgba(0,0,0,0.08);">
-                <h6 class="fw-bold"><i class="bi bi-check2-square text-primary me-2"></i>Document Verification & Validation</h6>
-                <p class="mb-0">Ensure all documents meet embassy/university requirements before submission.</p>
-              </div>
-            </div>
+      {% for step in [
+        {'title':'Transcripts & Academic Records','desc':'Our team verifies your transcripts and academic records for authenticity. We provide professional translations, notarization if required, and formatting according to university or embassy standards. Each document is carefully cross-checked for errors to avoid delays or rejections.','icon':'bi-journal-text'},
+        {'title':'Letters & Certificates','desc':'We assist in drafting, proofreading, and verifying recommendation letters, experience certificates, and other supporting documents. Every document is checked for compliance, legibility, and required signatures, ensuring it meets institutional requirements.','icon':'bi-file-earmark-check'},
+        {'title':'Application Forms','desc':'Filling forms correctly is crucial. We guide you through each field, attach necessary documents, and review for mistakes. Our consultants ensure that your applications are complete, consistent, and ready for submission to avoid unnecessary rejections.','icon':'bi-pencil-square'},
+        {'title':'Document Verification & Validation','desc':'Before submission, we validate all documents for authenticity, notarization, and completeness. Our team ensures embassy and university requirements are fully met, providing a stress-free and reliable process.','icon':'bi-check2-square'}
+      ] %}
+      <div class="row align-items-center mb-5 position-relative" style="z-index:2;">
+        {% if loop.index is odd %}
+        <div class="col-md-5 text-end">
+          <div class="p-4 bg-white rounded shadow-sm d-inline-block" style="max-width:95%;">
+            <h5 class="fw-bold mb-2"><i class="bi {{ step.icon }} text-primary me-2"></i>{{ step.title }}</h5>
+            <p class="mb-0">{{ step.desc }}</p>
           </div>
         </div>
-
-        <!-- Call to Action -->
-        <div class="text-center mt-4">
-          <a href="https://wa.me/919079007703?text=Hello%20Tejas%20Overseas,%20I%20need%20guidance%20for%20document%20preparation."
-             target="_blank"
-             class="btn btn-success btn-lg">Get My Documents Prepared</a>
+        <div class="col-md-2 text-center">
+          <div class="rounded-circle bg-primary" style="width:30px; height:30px; margin:auto;"></div>
         </div>
+        <div class="col-md-5"></div>
+        {% else %}
+        <div class="col-md-5"></div>
+        <div class="col-md-2 text-center">
+          <div class="rounded-circle bg-primary" style="width:30px; height:30px; margin:auto;"></div>
+        </div>
+        <div class="col-md-5 text-start">
+          <div class="p-4 bg-white rounded shadow-sm d-inline-block" style="max-width:95%;">
+            <h5 class="fw-bold mb-2"><i class="bi {{ step.icon }} text-primary me-2"></i>{{ step.title }}</h5>
+            <p class="mb-0">{{ step.desc }}</p>
+          </div>
+        </div>
+        {% endif %}
       </div>
+      {% endfor %}
     </div>
   </div>
+</section>
+
+<!-- STUDENT TESTIMONIALS -->
+<section class="py-5" style="background:#e9ecef;">
+  <div class="container">
+    <div class="text-center mb-5">
+      <h2 class="fw-bold">What Our Students Say</h2>
+      <p class="text-muted fs-5">Hear how Tejas Overseas helped students with their document preparation</p>
+    </div>
+
+    <div class="row g-4 justify-content-center">
+      {% for student in [
+        {'name':'Riya Sharma','course':'Masters in Computer Science, Italy','feedback':'Tejas Overseas ensured all my documents were perfectly prepared and verified. The process was smooth and professional.','image':'student1.jpg'},
+        {'name':'Ankit Verma','course':'MBA, Italy','feedback':'From transcripts to recommendation letters, every document was meticulously handled. Highly professional team.','image':'student2.jpg'},
+        {'name':'Priya Singh','course':'Design, Italy','feedback':'The consultants guided me step by step and validated each document. Stress-free and reliable service!','image':'student3.jpg'}
+      ] %}
+      <div class="col-md-4">
+        <div class="p-4 bg-white rounded shadow-sm h-100">
+          <div class="text-center mb-3">
+            </div>
+          <h6 class="fw-bold text-center">{{ student.name }}</h6>
+          <p class="text-muted text-center fst-italic mb-2">{{ student.course }}</p>
+          <p class="text-center">"{{ student.feedback }}"</p>
+        </div>
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+<!-- CTA BOTTOM -->
+<section class="py-5 text-center">
+  <a href="https://wa.me/919079007703?text=Hello%20Tejas%20Overseas,%20I%20need%20guidance%20for%20document%20preparation."
+     target="_blank"
+     class="btn btn-success btn-lg">Get Your Documents Prepared Now</a>
 </section>
 
 {% endblock %}

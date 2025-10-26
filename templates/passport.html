@@ -1,71 +1,125 @@
 {% extends "base.html" %}
 {% block content %}
 
+<!-- HERO SECTION -->
+<section class="py-5" style="background: url('{{ url_for('static', filename='images/passport_hero.jpg') }}') center/cover no-repeat; position: relative; min-height: 60vh;">
+  <div style="background: rgba(0,0,0,0.5); position: absolute; top:0; left:0; width:100%; height:100%;"></div>
+  <div class="container text-center text-white position-relative" style="z-index:2;">
+    <h1 class="display-5 fw-bold mb-3">Passport Services</h1>
+    <p class="fs-5 mb-4">Expert support for passport renewals, new applications, and urgent requests</p>
+    <a href="https://wa.me/919079007703?text=Hello%20Tejas%20Overseas,%20I%20need%20assistance%20for%20passport%20services."
+       target="_blank"
+       class="btn btn-success btn-lg">Get Passport Assistance</a>
+  </div>
+</section>
+
+<!-- PASSPORT PROCESS TIMELINE -->
 <section class="py-5" style="background: #f8f9fa;">
   <div class="container">
-    <!-- Header -->
     <div class="text-center mb-5">
-      <h2 class="fw-bold">Passport Services</h2>
-      <p class="text-muted fs-5">Expert support for passport renewals, new applications, and appointments</p>
+      <h2 class="fw-bold">Our Step-by-Step Passport Process</h2>
+      <p class="text-muted fs-5">Structured guidance for a smooth, hassle-free passport application or renewal</p>
     </div>
 
-    <!-- Main Content -->
-    <div class="row justify-content-center">
-      <div class="col-lg-10">
-        <p class="fs-6 mb-4 text-center">
-          Obtaining or renewing a passport can be a complex process. At <strong>Tejas Overseas</strong>, we simplify it for you. From preparing documents to booking appointments, we ensure your passport application is smooth, fast, and hassle-free.
-        </p>
+    <div class="position-relative">
+      <!-- Vertical line -->
+      <div style="position:absolute; left:50%; transform:translateX(-50%); width:4px; height:100%; background:#dee2e6;"></div>
 
-        <!-- What We Offer -->
-        <div class="mb-5">
-          <h5 class="fw-bold mb-3 text-center">What We Offer</h5>
-          <div class="row g-3 justify-content-center">
-            {% for item in [
-              {'title': 'Passport Renewal', 'desc': 'Complete guidance for renewing your existing passport.'},
-              {'title': 'New Passport Application', 'desc': 'Assistance for first-time passport applications.'},
-              {'title': 'Document Verification', 'desc': 'Ensure all required documents are correctly prepared.'},
-              {'title': 'Appointment Scheduling', 'desc': 'Book appointments with passport offices efficiently.'},
-              {'title': 'Follow-up & Updates', 'desc': 'Stay informed about the status of your passport application.'}
-            ] %}
-            <div class="col-md-6">
-              <div class="p-3 mb-3" style="background: #ffffff; border-radius: 8px; box-shadow: 0 4px 12px rgba(0,0,0,0.08);">
-                <h6 class="fw-bold"><i class="bi bi-check-circle-fill text-success me-2"></i>{{ item.title }}</h6>
-                <p class="mb-0">{{ item.desc }}</p>
-              </div>
-            </div>
-            {% endfor %}
+      {% for step in [
+        {'title':'Document Preparation','desc':'We verify all required documents such as proof of identity, address, and citizenship certificates. Our team ensures everything is complete and correctly formatted to avoid delays.','icon':'bi-file-earmark-text'},
+        {'title':'Application Form Filling','desc':'Assistance in filling out the passport application forms accurately. We guide you on every section to avoid mistakes and missing information.','icon':'bi-pencil-square'},
+        {'title':'Appointment Booking','desc':'Schedule your appointment at the passport office efficiently. We help you select the right date, time, and location to save time and reduce waiting.','icon':'bi-calendar-check'},
+        {'title':'Photograph & Biometrics Guidance','desc':'Advice on passport photo requirements and biometric submission procedures. We ensure your photographs and fingerprints meet official standards.','icon':'bi-camera-fill'},
+        {'title':'Submission & Tracking','desc':'Our team supports you in submitting your application and tracking its progress. You receive timely updates until your passport is issued.','icon':'bi-send-check'},
+        {'title':'Urgent Passport Handling','desc':'For urgent cases, we guide you through fast-track procedures and ensure all documentation is prioritized for quicker issuance.','icon':'bi-lightning-fill'}
+      ] %}
+      <div class="row align-items-center mb-5 position-relative" style="z-index:2;">
+        {% if loop.index is odd %}
+        <div class="col-md-5 text-end">
+          <div class="p-4 bg-white rounded shadow-sm d-inline-block" style="max-width:95%;">
+            <h5 class="fw-bold mb-2"><i class="bi {{ step.icon }} text-warning me-2"></i>{{ step.title }}</h5>
+            <p class="mb-0">{{ step.desc }}</p>
           </div>
         </div>
-
-        <!-- Why Choose Us -->
-        <div class="mb-5">
-          <h5 class="fw-bold mb-3 text-center">Why Choose Us</h5>
-          <div class="row g-3 justify-content-center">
-            {% for reason in [
-              {'title': 'Experienced Team', 'desc': 'Knowledgeable about all passport procedures and rules.'},
-              {'title': 'Fast & Reliable', 'desc': 'Minimize delays and errors in your passport application.'},
-              {'title': 'Dedicated Support', 'desc': 'Guidance at every step until you receive your passport.'}
-            ] %}
-            <div class="col-md-4">
-              <div class="p-3 text-center" style="background: #ffffff; border-radius: 8px; box-shadow: 0 4px 12px rgba(0,0,0,0.08);">
-                <h6 class="fw-bold">{{ reason.title }}</h6>
-                <p class="mb-0">{{ reason.desc }}</p>
-              </div>
-            </div>
-            {% endfor %}
+        <div class="col-md-2 text-center">
+          <div class="rounded-circle bg-warning" style="width:30px; height:30px; margin:auto;"></div>
+        </div>
+        <div class="col-md-5"></div>
+        {% else %}
+        <div class="col-md-5"></div>
+        <div class="col-md-2 text-center">
+          <div class="rounded-circle bg-warning" style="width:30px; height:30px; margin:auto;"></div>
+        </div>
+        <div class="col-md-5 text-start">
+          <div class="p-4 bg-white rounded shadow-sm d-inline-block" style="max-width:95%;">
+            <h5 class="fw-bold mb-2"><i class="bi {{ step.icon }} text-warning me-2"></i>{{ step.title }}</h5>
+            <p class="mb-0">{{ step.desc }}</p>
           </div>
         </div>
-
-        <!-- Call to Action -->
-        <div class="text-center">
-          <a href="https://wa.me/919079007703?text=Hello%20Tejas%20Overseas,%20I%20need%20assistance%20for%20passport%20services."
-             target="_blank"
-             class="btn btn-success btn-lg">Get Passport Assistance</a>
-        </div>
-
+        {% endif %}
       </div>
+      {% endfor %}
     </div>
   </div>
+</section>
+
+<!-- WHY CHOOSE US -->
+<section class="py-5">
+  <div class="container">
+    <div class="text-center mb-5">
+      <h2 class="fw-bold">Why Choose Tejas Overseas?</h2>
+      <p class="text-muted fs-5">Professional assistance to make your passport application simple and reliable</p>
+    </div>
+    <div class="row g-4 text-center">
+      {% for reason in [
+        {'title':'Experienced Team','desc':'Knowledgeable in all passport procedures and government regulations.','icon':'bi-person-badge-fill'},
+        {'title':'Fast & Reliable','desc':'We ensure timely submission and tracking of your passport application.','icon':'bi-clock-fill'},
+        {'title':'Dedicated Support','desc':'Guidance from start to finish until your passport is delivered.','icon':'bi-people-fill'},
+        {'title':'Trusted Guidance','desc':'Providing clear, step-by-step instructions and follow-ups for a smooth process.','icon':'bi-check2-circle'}
+      ] %}
+      <div class="col-md-3">
+        <div class="p-4 bg-white rounded shadow-sm h-100">
+          <i class="bi {{ reason.icon }} fs-1 text-warning mb-3"></i>
+          <h5 class="fw-bold">{{ reason.title }}</h5>
+          <p class="mb-0">{{ reason.desc }}</p>
+        </div>
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+<!-- STUDENT / CLIENT TESTIMONIALS -->
+<section class="py-5" style="background:#f8f9fa;">
+  <div class="container">
+    <div class="text-center mb-5">
+      <h2 class="fw-bold">What Our Clients Say</h2>
+      <p class="text-muted fs-5">Hear from clients who successfully received their passports with Tejas Overseas</p>
+    </div>
+
+    <div class="row g-4 justify-content-center">
+      {% for client in [
+        {'name':'Saurabh Gupta','feedback':'Tejas Overseas made my passport renewal simple and hassle-free. Their guidance and updates were excellent.','image':'client1.jpg'},
+        {'name':'Neha Verma','feedback':'I applied for a new passport and the team helped me every step of the way. Very professional!','image':'client2.jpg'},
+        {'name':'Rahul Mehta','feedback':'Urgent passport handled swiftly. I am very satisfied with the support provided.','image':'client3.jpg'}
+      ] %}
+      <div class="col-md-4">
+        <div class="p-4 bg-white rounded shadow-sm h-100">
+          <h6 class="fw-bold text-center">{{ client.name }}</h6>
+          <p class="text-center fst-italic text-muted mb-2">Passport Services</p>
+          <p class="text-center">"{{ client.feedback }}"</p>
+        </div>
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+<!-- CTA BOTTOM -->
+<section class="py-5 text-center">
+  <a href="https://wa.me/919079007703?text=Hello%20Tejas%20Overseas,%20I%20need%20assistance%20for%20passport%20services."
+     target="_blank"
+     class="btn btn-success btn-lg">Get Passport Assistance Now</a>
 </section>
 
 {% endblock %}

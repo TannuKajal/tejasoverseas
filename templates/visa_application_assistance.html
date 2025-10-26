@@ -1,71 +1,134 @@
 {% extends "base.html" %}
 {% block content %}
 
+<!-- HERO SECTION -->
+<section class="py-5" style="background: url('{{ url_for('static', filename='images/visa_hero.jpg') }}') center/cover no-repeat; position: relative; min-height: 60vh;">
+  <div style="background: rgba(0,0,0,0.5); position: absolute; top:0; left:0; width:100%; height:100%;"></div>
+  <div class="container text-center text-white position-relative" style="z-index:2;">
+    <h1 class="display-5 fw-bold mb-3">Visa Application Assistance</h1>
+    <p class="fs-5 mb-4">Step-by-step guidance for smooth and successful visa approval</p>
+    <a href="https://wa.me/919079007703?text=Hello%20Tejas%20Overseas,%20I%20need%20visa%20application%20assistance."
+       target="_blank"
+       class="btn btn-success btn-lg">Get Visa Assistance</a>
+  </div>
+</section>
+
+<!-- VISA APPLICATION TIMELINE -->
 <section class="py-5" style="background: #f8f9fa;">
   <div class="container">
-    <!-- Header -->
     <div class="text-center mb-5">
-      <h2 class="fw-bold">Visa Application Assistance</h2>
-      <p class="text-muted fs-5">Step-by-step support to ensure smooth visa approval</p>
+      <h2 class="fw-bold">Our Visa Application Process</h2>
+      <p class="text-muted fs-5">Professional assistance at every step to ensure your application is flawless</p>
     </div>
 
-    <!-- Main Content -->
-    <div class="row justify-content-center">
-      <div class="col-lg-10">
-        <p class="fs-6 mb-4 text-center">
-          Applying for a visa can be confusing and stressful. At <strong>Tejas Overseas</strong>, we simplify the process with expert guidance, ensuring your application is complete and submitted correctly. From document preparation to embassy appointments, we are with you every step of the way.
-        </p>
+    <div class="position-relative">
+      <!-- Vertical line -->
+      <div style="position:absolute; left:50%; transform:translateX(-50%); width:4px; height:100%; background:#dee2e6;"></div>
 
-        <!-- What We Offer -->
-        <div class="mb-5">
-          <h5 class="fw-bold mb-3 text-center">What We Offer</h5>
-          <div class="row g-3 justify-content-center">
-            {% for item in [
-              {'title': 'Document Checklist & Preparation', 'desc': 'Ensure you have all required documents prepared correctly.'},
-              {'title': 'Form Filling Assistance', 'desc': 'Step-by-step guidance for filling out visa application forms.'},
-              {'title': 'Embassy Appointment Booking', 'desc': 'We help you secure an appointment at the embassy.'},
-              {'title': 'Interview Preparation', 'desc': 'Tips and mock sessions to confidently handle visa interviews.'},
-              {'title': 'Follow-up & Updates', 'desc': 'Regular updates on your application status until approval.'}
-            ] %}
-            <div class="col-md-6">
-              <div class="p-3 mb-3" style="background: #ffffff; border-radius: 8px; box-shadow: 0 4px 12px rgba(0,0,0,0.08);">
-                <h6 class="fw-bold"><i class="bi bi-check-circle-fill text-success me-2"></i>{{ item.title }}</h6>
-                <p class="mb-0">{{ item.desc }}</p>
-              </div>
-            </div>
-            {% endfor %}
+      {% for step in [
+        {'title':'Document Checklist & Preparation','desc':'Our consultants verify your eligibility and prepare a complete checklist of all required documents. We ensure that transcripts, certificates, and supporting documents are accurate, translated if necessary, notarized, and formatted according to embassy standards.','icon':'bi-journal-text'},
+        {'title':'Form Filling Assistance','desc':'Step-by-step guidance is provided for completing visa forms. We carefully review each entry, check attachments, and prevent common mistakes that could cause delays or rejections.','icon':'bi-pencil-square'},
+        {'title':'Embassy Appointment Booking','desc':'We assist in selecting and securing embassy appointments, ensuring your submission is on time and according to embassy protocols. Our team manages scheduling efficiently for a stress-free experience.','icon':'bi-calendar-check'},
+        {'title':'Interview Preparation','desc':'Personalized interview coaching, including mock sessions and question practice. Our guidance helps you confidently handle in-person or online visa interviews with clarity and professionalism.','icon':'bi-people'},
+        {'title':'Follow-up & Updates','desc':'Continuous monitoring of your visa application status, proactive reminders, and instant updates until final approval. You are never left wondering about the progress.','icon':'bi-check2-square'}
+      ] %}
+      <div class="row align-items-center mb-5 position-relative" style="z-index:2;">
+        {% if loop.index is odd %}
+        <div class="col-md-5 text-end">
+          <div class="p-4 bg-white rounded shadow-sm d-inline-block" style="max-width:95%;">
+            <h5 class="fw-bold mb-2"><i class="bi {{ step.icon }} text-primary me-2"></i>{{ step.title }}</h5>
+            <p class="mb-0">{{ step.desc }}</p>
           </div>
         </div>
-
-        <!-- Why Choose Us -->
-        <div class="mb-5">
-          <h5 class="fw-bold mb-3 text-center">Why Choose Us</h5>
-          <div class="row g-3 justify-content-center">
-            {% for reason in [
-              {'title': 'Experienced Consultants', 'desc': 'Expert in handling visa applications for multiple countries.'},
-              {'title': 'Dedicated Support', 'desc': 'Assistance at every stage of your visa process.'},
-              {'title': 'Proven Success', 'desc': 'High approval rate with smooth processing for our clients.'}
-            ] %}
-            <div class="col-md-4">
-              <div class="p-3 text-center" style="background: #ffffff; border-radius: 8px; box-shadow: 0 4px 12px rgba(0,0,0,0.08);">
-                <h6 class="fw-bold">{{ reason.title }}</h6>
-                <p class="mb-0">{{ reason.desc }}</p>
-              </div>
-            </div>
-            {% endfor %}
+        <div class="col-md-2 text-center">
+          <div class="rounded-circle bg-primary" style="width:30px; height:30px; margin:auto;"></div>
+        </div>
+        <div class="col-md-5"></div>
+        {% else %}
+        <div class="col-md-5"></div>
+        <div class="col-md-2 text-center">
+          <div class="rounded-circle bg-primary" style="width:30px; height:30px; margin:auto;"></div>
+        </div>
+        <div class="col-md-5 text-start">
+          <div class="p-4 bg-white rounded shadow-sm d-inline-block" style="max-width:95%;">
+            <h5 class="fw-bold mb-2"><i class="bi {{ step.icon }} text-primary me-2"></i>{{ step.title }}</h5>
+            <p class="mb-0">{{ step.desc }}</p>
           </div>
         </div>
+        {% endif %}
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+</section>
 
-        <!-- Call to Action -->
-        <div class="text-center">
-          <a href="https://wa.me/919079007703?text=Hello%20Tejas%20Overseas,%20I%20need%20guidance%20for%20visa%20application."
-             target="_blank"
-             class="btn btn-success btn-lg">Get Visa Assistance</a>
+<!-- WHY CHOOSE US -->
+<section class="py-5">
+  <div class="container">
+    <div class="text-center mb-5">
+      <h2 class="fw-bold">Why Choose Tejas Overseas?</h2>
+      <p class="text-muted fs-5">Trusted, professional, and proven visa services</p>
+    </div>
+
+    <div class="row g-4 justify-content-center text-center">
+      <div class="col-md-4">
+        <div class="p-4 bg-white rounded shadow-sm h-100">
+          <h5 class="fw-bold">Experienced Consultants</h5>
+          <p class="mb-2">Experts with extensive knowledge of visa processes for multiple countries.</p>
+          <p class="fw-bold text-primary fs-4">100+ Visa Approvals</p>
         </div>
-
+      </div>
+      <div class="col-md-4">
+        <div class="p-4 bg-white rounded shadow-sm h-100">
+          <h5 class="fw-bold">Dedicated Support</h5>
+          <p class="mb-2">Assistance at every stage — from document preparation to embassy submission.</p>
+          <p class="fw-bold text-primary fs-4">24/7 Guidance</p>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="p-4 bg-white rounded shadow-sm h-100">
+          <h5 class="fw-bold">Proven Success</h5>
+          <p class="mb-2">High approval rate and smooth processing for our clients.</p>
+          <p class="fw-bold text-primary fs-4">95%+ Approval Rate</p>
+        </div>
       </div>
     </div>
   </div>
+</section>
+
+<!-- STUDENT TESTIMONIALS -->
+<section class="py-5" style="background:#e9ecef;">
+  <div class="container">
+    <div class="text-center mb-5">
+      <h2 class="fw-bold">What Our Students Say</h2>
+      <p class="text-muted fs-5">Successful visa journeys facilitated by Tejas Overseas</p>
+    </div>
+
+    <div class="row g-4 justify-content-center">
+      {% for student in [
+        {'name':'Rohan Kapoor','visa':'Student Visa, Italy','feedback':'The team guided me flawlessly through the entire visa process. My application was complete, and the interview preparation gave me confidence.','image':'student4.jpg'},
+        {'name':'Sneha Mehta','visa':'MBA Visa, Italy','feedback':'From documents to embassy appointment, everything was handled professionally. Smooth and stress-free experience!','image':'student5.jpg'},
+        {'name':'Aditya Jain','visa':'Masters in Design, Italy','feedback':'Excellent guidance, timely follow-ups, and clear instructions. Highly recommended!','image':'student6.jpg'}
+      ] %}
+      <div class="col-md-4">
+        <div class="p-4 bg-white rounded shadow-sm h-100">
+          <div class="text-center mb-3">
+            </div>
+          <h6 class="fw-bold text-center">{{ student.name }}</h6>
+          <p class="text-muted text-center fst-italic mb-2">{{ student.visa }}</p>
+          <p class="text-center">"{{ student.feedback }}"</p>
+        </div>
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+<!-- CTA BOTTOM -->
+<section class="py-5 text-center">
+  <a href="https://wa.me/919079007703?text=Hello%20Tejas%20Overseas,%20I%20need%20visa%20application%20assistance."
+     target="_blank"
+     class="btn btn-success btn-lg">Get Visa Assistance Now</a>
 </section>
 
 {% endblock %}

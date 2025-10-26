@@ -5,28 +5,107 @@
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>Tejas Overseas</title>
 
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600&family=Open+Sans:wght@400;500&display=swap" rel="stylesheet">
+
   <!-- Bootstrap -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet">
 
-  <link rel="stylesheet" href="{{ url_for('static', filename='css/site.css') }}"/>
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}"/>
 
   <style>
-    body { padding-top:72px; }
-    .carousel-caption { background: none; }
-    .service-card { transition: transform .18s ease, box-shadow .18s ease; }
-    .service-card:hover { transform: translateY(-6px); box-shadow: 0 8px 20px rgba(0,0,0,0.08); }
-    .float-buttons { position: fixed; right: 20px; bottom: 20px; z-index: 1100; display:flex; flex-direction:column; gap:.6rem; }
-    .float-btn { width:56px; height:56px; border-radius:50%; display:flex; align-items:center; justify-content:center; background:white; box-shadow:0 6px 18px rgba(0,0,0,0.12); }
-    .float-btn img, .float-btn i { width:32px; height:32px; }
+    /* Reset body padding */
+    body {
+      margin: 0;
+      font-family: 'Open Sans', sans-serif;
+      color: #212529;
+      background-color: #fdfdfd;
+    }
+    h1, h2, h3, h4, h5 {
+      font-family: 'Montserrat', sans-serif;
+    }
+
+    /* Top Contact Bar */
+    .top-bar {
+      background: #111;
+      color: #f8f9fa;
+      font-size: 0.9rem;
+      height: 40px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .top-bar a {
+      color: #f5d061;
+      text-decoration: none;
+      margin: 0 5px;
+    }
+    .top-bar a:hover {
+      text-decoration: underline;
+    }
+
+    /* NAVBAR */
+    .navbar {
+      background-color: #1a1a1a !important;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.08);
+    }
+    .navbar-brand {
+      font-weight: 600;
+      letter-spacing: 0.5px;
+    }
+
+    /* Floating Buttons */
+    .float-buttons {
+      position: fixed;
+      right: 20px;
+      bottom: 20px;
+      z-index: 1100;
+      display: flex;
+      flex-direction: column;
+      gap: .6rem;
+    }
+    .float-btn {
+      width: 56px;
+      height: 56px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: white;
+      box-shadow: 0 6px 18px rgba(0,0,0,0.12);
+      transition: all .3s ease;
+    }
+    .float-btn:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 8px 22px rgba(0,0,0,0.2);
+    }
+    .float-btn img, .float-btn i {
+      width: 30px;
+      height: 30px;
+    }
+
+    /* Footer */
+    footer {
+      background: #111;
+      color: #ccc;
+    }
+    footer a {
+      color: #f5d061;
+      text-decoration: none;
+    }
+    footer a:hover {
+      text-decoration: underline;
+    }
   </style>
 </head>
 <body>
 
-<!-- NAV -->
-<nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+<!-- NAVBAR -->
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
   <div class="container">
-    <a class="navbar-brand" href="{{ url_for('index') }}">Tejas Overseas</a>
+    <a class="navbar-brand fw-semibold" href="{{ url_for('index') }}">Tejas Overseas</a>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#nav">
       <span class="navbar-toggler-icon"></span>
     </button>
@@ -35,18 +114,18 @@
         <li class="nav-item"><a class="nav-link" href="{{ url_for('index') }}#home">Home</a></li>
         <li class="nav-item"><a class="nav-link" href="{{ url_for('index') }}#services">Services</a></li>
         <li class="nav-item"><a class="nav-link" href="{{ url_for('index') }}#about">About</a></li>
+        <li class="nav-item"><a class="nav-link" href="{{ url_for('index') }}#contact">Contact</a></li>
       </ul>
     </div>
   </div>
 </nav>
 
-<!-- page content -->
+<!-- MAIN CONTENT -->
 {% block content %}{% endblock %}
 
-<!-- Floating Buttons: WhatsApp + Call -->
+<!-- Floating Buttons -->
 <div class="float-buttons">
   <a class="float-btn" href="https://wa.me/919079007703?text=Hello%20I%20need%20your%20guidance%20on%20visa%20process" target="_blank" title="Chat on WhatsApp">
-    <!-- Use an icon for WhatsApp -->
     <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp">
   </a>
 
@@ -55,12 +134,28 @@
   </a>
 </div>
 
-<footer class="bg-dark text-white py-3 mt-5">
+<!-- FOOTER -->
+<footer class="py-4 mt-5">
   <div class="container text-center">
-    <small>© {{ 2025 }} Tejas Overseas • Trusted visa & travel consultancy</small>
+    <div class="mb-2">
+      <a href="https://www.facebook.com/" target="_blank" class="me-3"><i class="bi bi-facebook fs-5"></i></a>
+      <a href="https://www.instagram.com/" target="_blank" class="me-3"><i class="bi bi-instagram fs-5"></i></a>
+      <a href="https://wa.me/919079007703" target="_blank"><i class="bi bi-whatsapp fs-5"></i></a>
+    </div>
+    <div>
+      <small>
+        <i class="bi bi-geo-alt-fill me-1"></i> New Delhi, India •
+        <i class="bi bi-envelope-fill mx-1"></i> info@tejasoverseas.com •
+        <i class="bi bi-telephone-fill mx-1"></i> +91 90790 07703
+      </small>
+    </div>
+    <div class="mt-2">
+      <small>© 2025 Tejas Overseas — Guiding Dreams Beyond Borders</small>
+    </div>
   </div>
 </footer>
 
+<!-- Bootstrap JS -->
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>

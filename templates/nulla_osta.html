@@ -5,65 +5,124 @@
   <div class="container">
     <!-- Header -->
     <div class="text-center mb-5">
-      <h2 class="fw-bold">Nulla Osta Appointments</h2>
-      <p class="text-muted fs-5">Expert support for scheduling and preparing your Nulla Osta documents</p>
+      <h2 class="fw-bold text-dark">Nulla Osta Appointments</h2>
+      <p class="text-muted fs-5">
+        Expert guidance and step-by-step support for every type of Nulla Osta — Seasonal, Domestic, and Family Reunion.
+      </p>
     </div>
 
-    <!-- Main Content -->
-    <div class="row justify-content-center">
-      <div class="col-lg-10">
-        <p class="fs-6 mb-4 text-center">
-          Obtaining a Nulla Osta is an essential step for studying in Italy. <strong>Tejas Overseas</strong> provides step-by-step guidance, helping you prepare documents, schedule appointments, and follow-up until completion. We make the process smooth and stress-free.
-        </p>
+    <!-- Intro to Nulla Osta -->
+<div class="row justify-content-center mb-5">
+  <div class="col-lg-10 text-center">
+    <p class="fs-6 mb-3">
+      A <strong>Nulla Osta</strong> is an official clearance required to work, study, or reunite with family in Italy. It ensures that the Italian authorities have approved your eligibility for the requested purpose.
+    </p>
+    <p class="fs-6 mb-3">
+      Depending on your goals, there are different types of Nulla Osta: <strong>Seasonal</strong> for temporary work, <strong>Domestic</strong> for caregivers and household staff, and <strong>Family Reunion</strong> for joining loved ones legally residing in Italy.
+    </p>
+    <p class="fs-6 mb-0">
+      At <strong>Tejas Overseas</strong>, we provide professional guidance for each type. Our consultants ensure that your documents are accurate, appointments are booked correctly, and the process is smooth and stress-free. We handle all the details so you can focus on your move to Italy with confidence.
+    </p>
+  </div>
+</div>
 
-        <!-- What We Offer -->
-        <div class="mb-5">
-          <h5 class="fw-bold mb-3 text-center">What We Offer</h5>
-          <div class="row g-3 justify-content-center">
-            {% for item in [
-              {'title': 'Document Preparation', 'desc': 'Ensure all your certificates, letters, and forms are correctly prepared.'},
-              {'title': 'Appointment Scheduling', 'desc': 'Book Nulla Osta appointments efficiently without delays.'},
-              {'title': 'Form Submission Guidance', 'desc': 'Step-by-step help with completing all required forms.'},
-              {'title': 'Follow-up Assistance', 'desc': 'Track application progress and get timely updates.'},
-              {'title': 'Expert Consultation', 'desc': 'Clarify doubts and receive personalized guidance.'}
-            ] %}
-            <div class="col-md-6">
-              <div class="p-3 mb-3" style="background: #ffffff; border-radius: 8px; box-shadow: 0 4px 12px rgba(0,0,0,0.08);">
-                <h6 class="fw-bold"><i class="bi bi-check-circle-fill text-success me-2"></i>{{ item.title }}</h6>
-                <p class="mb-0">{{ item.desc }}</p>
-              </div>
-            </div>
-            {% endfor %}
+    <!-- Horizontal Cards for Types of Nulla Osta -->
+    <div class="row g-4 justify-content-center mb-5">
+      <!-- Seasonal Nulla Osta -->
+      <div class="col-md-4">
+        <div class="card h-100 shadow-sm rounded-4 border-0" style="border-left: 4px solid #2c7a2c;">
+          <div class="card-body text-center">
+            <h5 class="fw-bold text-dark mb-2">Seasonal Nulla Osta</h5>
+            <p class="text-muted mb-3">
+              Short-term work opportunities in Italy’s seasonal industries like agriculture and tourism.
+            </p>
+            <a href="/seasonal-nulla-osta" class="btn btn-success btn-sm">Learn More</a>
           </div>
         </div>
-
-        <!-- Why Choose Us -->
-        <div class="mb-5">
-          <h5 class="fw-bold mb-3 text-center">Why Choose Us</h5>
-          <div class="row g-3 justify-content-center">
-            {% for reason in [
-              {'title': 'Experienced Consultants', 'desc': 'Familiar with the Nulla Osta process and embassy requirements.'},
-              {'title': 'Fast & Reliable', 'desc': 'Minimize delays and ensure timely appointment scheduling.'},
-              {'title': 'Personalized Support', 'desc': 'Guidance tailored to your documents and specific case.'}
-            ] %}
-            <div class="col-md-4">
-              <div class="p-3 text-center" style="background: #ffffff; border-radius: 8px; box-shadow: 0 4px 12px rgba(0,0,0,0.08);">
-                <h6 class="fw-bold">{{ reason.title }}</h6>
-                <p class="mb-0">{{ reason.desc }}</p>
-              </div>
-            </div>
-            {% endfor %}
-          </div>
-        </div>
-
-        <!-- Call to Action -->
-        <div class="text-center">
-          <a href="https://wa.me/919079007703?text=Hello%20Tejas%20Overseas,%20I%20need%20assistance%20for%20Nulla%20Osta%20appointment."
-             target="_blank"
-             class="btn btn-success btn-lg">Get Appointment Assistance</a>
-        </div>
-
       </div>
+
+      <!-- Domestic Nulla Osta -->
+      <div class="col-md-4">
+        <div class="card h-100 shadow-sm rounded-4 border-0" style="border-left: 4px solid #1d4e89;">
+          <div class="card-body text-center">
+            <h5 class="fw-bold text-dark mb-2">Domestic Nulla Osta</h5>
+            <p class="text-muted mb-3">
+              Legal work support for caregivers and domestic workers in Italian households.
+            </p>
+            <a href="/domestic-nulla-osta" class="btn btn-primary btn-sm">Learn More</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Family Reunion Nulla Osta -->
+      <div class="col-md-4">
+        <div class="card h-100 shadow-sm rounded-4 border-0" style="border-left: 4px solid #a83232;">
+          <div class="card-body text-center">
+            <h5 class="fw-bold text-dark mb-2">Family Reunion Nulla Osta</h5>
+            <p class="text-muted mb-3">
+              Facilitate family reunification with loved ones legally residing in Italy.
+            </p>
+            <a href="/family-nulla-osta" class="btn btn-danger btn-sm">Learn More</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Why Choose Tejas Overseas -->
+    <div class="mt-5 text-center">
+      <h5 class="fw-bold mb-3">Why Choose Tejas Overseas</h5>
+      <div class="row g-3 justify-content-center">
+        <div class="col-md-3">
+          <div class="p-3 bg-white rounded-3 shadow-sm h-100">
+            <h6 class="fw-bold">Experienced Consultants</h6>
+            <p class="mb-0">Our team knows embassy and consulate requirements for all types of Nulla Osta.</p>
+          </div>
+        </div>
+        <div class="col-md-3">
+          <div class="p-3 bg-white rounded-3 shadow-sm h-100">
+            <h6 class="fw-bold">Fast & Reliable</h6>
+            <p class="mb-0">Minimize delays and ensure appointments are booked efficiently.</p>
+          </div>
+        </div>
+        <div class="col-md-3">
+          <div class="p-3 bg-white rounded-3 shadow-sm h-100">
+            <h6 class="fw-bold">Personalized Guidance</h6>
+            <p class="mb-0">Each client receives dedicated, case-specific assistance from start to finish.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Student Testimonials -->
+    <div class="mt-5 text-center">
+      <h5 class="fw-bold mb-4">What Our Students Say</h5>
+      <div class="row g-4 justify-content-center">
+        <div class="col-md-4">
+          <div class="p-4 bg-white rounded-3 shadow-sm h-100">
+            <p class="fst-italic mb-2">“Tejas Overseas guided me through the Seasonal Nulla Osta process with clarity and professionalism. Everything was smooth and hassle-free!”</p>
+            <h6 class="fw-bold mb-0">– Priya Sharma</h6>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="p-4 bg-white rounded-3 shadow-sm h-100">
+            <p class="fst-italic mb-2">“Their team helped me secure a Domestic Nulla Osta quickly. Their expertise made the paperwork stress-free.”</p>
+            <h6 class="fw-bold mb-0">– Rohan Verma</h6>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="p-4 bg-white rounded-3 shadow-sm h-100">
+            <p class="fst-italic mb-2">“I was able to reunite with my family in Italy thanks to the guidance and follow-up from Tejas Overseas. Highly recommend!”</p>
+            <h6 class="fw-bold mb-0">– Ananya Kapoor</h6>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Call to Action -->
+    <div class="text-center mt-5">
+      <a href="https://wa.me/919079007703?text=Hello%20Tejas%20Overseas,%20I%20need%20help%20with%20Nulla%20Osta%20appointment."
+         target="_blank"
+         class="btn btn-dark btn-lg">Get Appointment Assistance</a>
     </div>
   </div>
 </section>

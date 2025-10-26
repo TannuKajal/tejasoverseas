@@ -1,71 +1,126 @@
 {% extends "base.html" %}
 {% block content %}
 
+<!-- HERO SECTION -->
+<section class="py-5" style="background: url('{{ url_for('static', filename='images/13.png') }}') center/cover no-repeat; position: relative; min-height: 60vh;">
+  <div style="background: rgba(0,0,0,0.5); position: absolute; top:0; left:0; width:100%; height:100%;"></div>
+  <div class="container text-center text-white position-relative" style="z-index:2;">
+    <h1 class="display-5 fw-bold mb-3">Admission Guidance</h1>
+    <p class="fs-5 mb-4">Professional support from course selection to university enrollment</p>
+    <a href="https://wa.me/919079007703?text=Hello%20Tejas%20Overseas,%20I%20need%20guidance%20for%20admission%20process."
+       target="_blank"
+       class="btn btn-success btn-lg">Get Guidance Now</a>
+  </div>
+</section>
+
+<!-- ADMISSION PROCESS TIMELINE -->
 <section class="py-5" style="background: #f8f9fa;">
   <div class="container">
-    <!-- Header -->
     <div class="text-center mb-5">
-      <h2 class="fw-bold">Admission Guidance</h2>
-      <p class="text-muted fs-5">Personalized support from course selection to university enrollment</p>
+      <h2 class="fw-bold">Our Step-by-Step Admission Process</h2>
+      <p class="text-muted fs-5">A clear, structured journey to ensure a seamless admission experience</p>
     </div>
 
-    <!-- Main Content -->
-    <div class="row justify-content-center">
-      <div class="col-lg-10">
-        <p class="fs-6 mb-4 text-center">
-          Studying in Italy is more than academics – it’s a journey of culture, opportunities, and personal growth. At <strong>Tejas Overseas</strong>, we provide seamless step-by-step guidance from choosing the perfect course to submitting documents and securing your admission.
-        </p>
+    <div class="position-relative">
+      <!-- Vertical line -->
+      <div style="position:absolute; left:50%; transform:translateX(-50%); width:4px; height:100%; background:#dee2e6;"></div>
 
-        <!-- What We Offer -->
-        <div class="mb-5">
-          <h5 class="fw-bold mb-3 text-center">What We Offer</h5>
-          <div class="row g-3 justify-content-center">
-            {% for item in [
-              {'title': 'Course & University Selection', 'desc': 'Tailored advice to choose programs that align with your career goals.'},
-              {'title': 'Eligibility Assessment', 'desc': 'Ensuring your qualifications meet Italian university standards.'},
-              {'title': 'Application Preparation', 'desc': 'Assistance with forms, motivation letters, and document submissions.'},
-              {'title': 'Interview & Communication Guidance', 'desc': 'Tips and support for online or in-person interviews.'},
-              {'title': 'Follow-up & Updates', 'desc': 'Timely tracking of your application status until final approval.'}
-            ] %}
-            <div class="col-md-6">
-              <div class="p-3 mb-3" style="background: #ffffff; border-radius: 8px; box-shadow: 0 4px 12px rgba(0,0,0,0.08);">
-                <h6 class="fw-bold"><i class="bi bi-check-circle-fill text-success me-2"></i>{{ item.title }}</h6>
-                <p class="mb-0">{{ item.desc }}</p>
-              </div>
-            </div>
-            {% endfor %}
+      {% for step in [
+        {'title':'Course & University Selection','desc':'We analyze your academic background, career goals, and preferences to recommend courses and universities in Italy that match your aspirations. We provide insights into course content, faculty, campus culture, and career opportunities to help you make informed decisions.','icon':'bi-book'},
+        {'title':'Eligibility Assessment','desc':'We carefully review your academic qualifications, language skills, and other requirements to ensure eligibility. Our consultants highlight gaps and suggest strategies to strengthen your profile for admission success.','icon':'bi-check-circle'},
+        {'title':'Application Preparation','desc':'Our team assists with form filling, document verification, motivation letters, CV formatting, and submission deadlines. Every detail is carefully checked to meet university requirements and maximize acceptance chances.','icon':'bi-file-earmark-text'},
+        {'title':'Interview & Communication Guidance','desc':'We provide mock interviews, tips, and guidance on professional communication to ensure you confidently present your profile during interviews, whether online or in-person.','icon':'bi-person-lines-fill'},
+        {'title':'Follow-up & Updates','desc':'After submission, we track your application and provide timely updates. You receive prompt notifications about acceptance, additional requirements, or deadlines. We support you until final admission confirmation.','icon':'bi-bell-fill'}
+      ] %}
+      <div class="row align-items-center mb-5 position-relative" style="z-index:2;">
+        {% if loop.index is odd %}
+        <div class="col-md-5 text-end">
+          <div class="p-4 bg-white rounded shadow-sm d-inline-block" style="max-width:95%;">
+            <h5 class="fw-bold mb-2"><i class="bi {{ step.icon }} text-warning me-2"></i>{{ step.title }}</h5>
+            <p class="mb-0">{{ step.desc }}</p>
           </div>
         </div>
-
-        <!-- Why Choose Us -->
-        <div class="mb-5">
-          <h5 class="fw-bold mb-3 text-center">Why Choose Us</h5>
-          <div class="row g-3 justify-content-center">
-            {% for reason in [
-              {'title': 'Expert Consultants', 'desc': 'Familiar with Italian admissions and processes.'},
-              {'title': 'Dedicated Guidance', 'desc': 'Support at every stage of your application journey.'},
-              {'title': 'Proven Track Record', 'desc': 'Successful placements for hundreds of students.'}
-            ] %}
-            <div class="col-md-4">
-              <div class="p-3 text-center" style="background: #ffffff; border-radius: 8px; box-shadow: 0 4px 12px rgba(0,0,0,0.08);">
-                <h6 class="fw-bold">{{ reason.title }}</h6>
-                <p class="mb-0">{{ reason.desc }}</p>
-              </div>
-            </div>
-            {% endfor %}
+        <div class="col-md-2 text-center">
+          <div class="rounded-circle bg-warning" style="width:30px; height:30px; margin:auto;"></div>
+        </div>
+        <div class="col-md-5"></div>
+        {% else %}
+        <div class="col-md-5"></div>
+        <div class="col-md-2 text-center">
+          <div class="rounded-circle bg-warning" style="width:30px; height:30px; margin:auto;"></div>
+        </div>
+        <div class="col-md-5 text-start">
+          <div class="p-4 bg-white rounded shadow-sm d-inline-block" style="max-width:95%;">
+            <h5 class="fw-bold mb-2"><i class="bi {{ step.icon }} text-warning me-2"></i>{{ step.title }}</h5>
+            <p class="mb-0">{{ step.desc }}</p>
           </div>
         </div>
-
-        <!-- Call to Action -->
-        <div class="text-center">
-          <a href="https://wa.me/919079007703?text=Hello%20Tejas%20Overseas,%20I%20need%20guidance%20for%20admission%20process."
-             target="_blank"
-             class="btn btn-success btn-lg">Get Admission Guidance</a>
-        </div>
-
+        {% endif %}
       </div>
+      {% endfor %}
     </div>
   </div>
+</section>
+
+<!-- WHY CHOOSE US -->
+<section class="py-5">
+  <div class="container">
+    <div class="text-center mb-5">
+      <h2 class="fw-bold">Why Choose Tejas Overseas?</h2>
+      <p class="text-muted fs-5">Professional guidance that ensures your study abroad journey is smooth and successful</p>
+    </div>
+    <div class="row g-4 text-center">
+      {% for reason in [
+        {'title':'Expert Consultants','desc':'In-depth knowledge of Italian admissions and processes.','icon':'bi-person-badge-fill'},
+        {'title':'Dedicated Guidance','desc':'Step-by-step support at every stage of your application.','icon':'bi-briefcase-fill'},
+        {'title':'Proven Track Record','desc':'Successful placements for hundreds of students.','icon':'bi-bar-chart-fill'},
+        {'title':'Students Guided','desc':'500+ students successfully placed in Italian universities.','icon':'bi-mortarboard-fill'}
+      ] %}
+      <div class="col-md-3">
+        <div class="p-4 bg-white rounded shadow-sm h-100">
+          <i class="bi {{ reason.icon }} fs-1 text-warning mb-3"></i>
+          <h5 class="fw-bold">{{ reason.title }}</h5>
+          <p class="mb-0">{{ reason.desc }}</p>
+        </div>
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+<!-- STUDENT TESTIMONIALS -->
+<section class="py-5" style="background:#f8f9fa;">
+  <div class="container">
+    <div class="text-center mb-5">
+      <h2 class="fw-bold">What Our Students Say</h2>
+      <p class="text-muted fs-5">Hear from students who have successfully pursued their dreams with Tejas Overseas</p>
+    </div>
+
+    <div class="row g-4 justify-content-center">
+      {% for student in [
+        {'name':'Riya Sharma','course':'Masters in Computer Science, Italy','feedback':'Tejas Overseas guided me step by step through the admission process. Their expertise and support made everything simple and stress-free.','image':'student1.jpg'},
+        {'name':'Ankit Verma','course':'MBA, Italy','feedback':'The consultants were professional and attentive. They helped me select the right course and prepared me for the interview thoroughly.','image':'student2.jpg'},
+        {'name':'Priya Singh','course':'Design, Italy','feedback':'Excellent guidance at every stage! From application preparation to follow-ups, Tejas Overseas made my dream come true.','image':'student3.jpg'}
+      ] %}
+      <div class="col-md-4">
+        <div class="p-4 bg-white rounded shadow-sm h-100">
+          <div class="text-center mb-3">
+          </div>
+          <h6 class="fw-bold text-center">{{ student.name }}</h6>
+          <p class="text-muted text-center fst-italic mb-2">{{ student.course }}</p>
+          <p class="text-center">"{{ student.feedback }}"</p>
+        </div>
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+<!-- CTA BOTTOM -->
+<section class="py-5 text-center">
+  <a href="https://wa.me/919079007703?text=Hello%20Tejas%20Overseas,%20I%20need%20guidance%20for%20admission%20process."
+     target="_blank"
+     class="btn btn-success btn-lg">Get Admission Guidance Now</a>
 </section>
 
 {% endblock %}

@@ -1,71 +1,153 @@
 {% extends "base.html" %}
 {% block content %}
 
+<!-- HERO SECTION -->
+<section class="py-5" style="background: url('{{ url_for('static', filename='images/uae_visa_hero.jpg') }}') center/cover no-repeat; position: relative; min-height: 60vh;">
+  <div style="background: rgba(0,0,0,0.5); position: absolute; top:0; left:0; width:100%; height:100%;"></div>
+  <div class="container text-center text-white position-relative" style="z-index:2;">
+    <h1 class="display-5 fw-bold mb-3">UAE Visa Services</h1>
+    <p class="fs-5 mb-4">Professional guidance for a smooth and hassle-free UAE visa application</p>
+    <a href="https://wa.me/919079007703?text=Hello%20Tejas%20Overseas,%20I%20need%20guidance%20for%20UAE%20visa%20application."
+       target="_blank"
+       class="btn btn-success btn-lg">Get UAE Visa Assistance</a>
+  </div>
+</section>
+
+<!-- VISA APPLICATION PROCESS TIMELINE -->
 <section class="py-5" style="background: #f8f9fa;">
   <div class="container">
-    <!-- Header -->
     <div class="text-center mb-5">
-      <h2 class="fw-bold">UAE Tourist Visa</h2>
-      <p class="text-muted fs-5">Quick approvals and trusted travel consultancy for UAE tourists</p>
+      <h2 class="fw-bold">Step-by-Step UAE Visa Application</h2>
+      <p class="text-muted fs-5">Clear, structured guidance for a successful UAE visa approval</p>
     </div>
 
-    <!-- Main Content -->
-    <div class="row justify-content-center">
-      <div class="col-lg-10">
-        <p class="fs-6 mb-4 text-center">
-          Planning your UAE trip? <strong>Tejas Overseas</strong> provides complete guidance for tourist visa applications, ensuring smooth processing and stress-free travel. We help with documentation, application submission, and follow-up to make your journey seamless.
-        </p>
+    <div class="position-relative">
+      <!-- Vertical line -->
+      <div style="position:absolute; left:50%; transform:translateX(-50%); width:4px; height:100%; background:#dee2e6;"></div>
 
-        <!-- What We Offer -->
-        <div class="mb-5">
-          <h5 class="fw-bold mb-3 text-center">What We Offer</h5>
-          <div class="row g-3 justify-content-center">
-            {% for item in [
-              {'title': 'Visa Eligibility Check', 'desc': 'Ensure you meet all requirements for a UAE tourist visa.'},
-              {'title': 'Document Preparation', 'desc': 'Accurate preparation of passport copies, photos, and supporting documents.'},
-              {'title': 'Application Submission', 'desc': 'Step-by-step guidance for submitting your application online or via embassy.'},
-              {'title': 'Timely Updates', 'desc': 'Track your visa application status and receive notifications.'},
-              {'title': 'Travel Consultancy', 'desc': 'Advice on itinerary, hotels, and local regulations for tourists.'}
-            ] %}
-            <div class="col-md-6">
-              <div class="p-3 mb-3" style="background: #ffffff; border-radius: 8px; box-shadow: 0 4px 12px rgba(0,0,0,0.08);">
-                <h6 class="fw-bold"><i class="bi bi-check-circle-fill text-success me-2"></i>{{ item.title }}</h6>
-                <p class="mb-0">{{ item.desc }}</p>
-              </div>
-            </div>
-            {% endfor %}
+      {% for step in [
+        {'title':'Document Verification','desc':'Our experts review your passport, photographs, and supporting documents to ensure all requirements for UAE visa submission are complete and accurate.','icon':'bi-file-earmark-text'},
+        {'title':'Form Filling Assistance','desc':'We guide you in filling out the UAE visa application form correctly, avoiding mistakes that could delay approval.','icon':'bi-pencil-square'},
+        {'title':'Visa Fee Payment','desc':'We provide secure guidance for the correct payment of visa fees and receipts submission.','icon':'bi-cash-stack'},
+        {'title':'Embassy/Consulate Submission','desc':'Our team schedules your submission, ensuring all documents are presented in the correct format to the UAE authorities.','icon':'bi-building'},
+        {'title':'Follow-up & Updates','desc':'We track your application and provide regular updates on its status, so you are never left wondering.','icon':'bi-bell-fill'},
+        {'title':'Passport Stamping & Delivery','desc':'After approval, we guide you in receiving your passport with the UAE visa safely and on time.','icon':'bi-pass'}
+      ] %}
+
+      <div class="row align-items-center mb-5 position-relative" style="z-index:2;">
+        {% if loop.index is odd %}
+        <div class="col-md-5 text-end">
+          <div class="p-4 bg-white rounded shadow-sm d-inline-block" style="max-width:95%;">
+            <h5 class="fw-bold mb-2"><i class="bi {{ step.icon }} text-warning me-2"></i>{{ step.title }}</h5>
+            <p class="mb-0">{{ step.desc }}</p>
           </div>
         </div>
-
-        <!-- Why Choose Us -->
-        <div class="mb-5">
-          <h5 class="fw-bold mb-3 text-center">Why Choose Us</h5>
-          <div class="row g-3 justify-content-center">
-            {% for reason in [
-              {'title': 'Expert Consultants', 'desc': 'Experienced in UAE visa procedures and regulations.'},
-              {'title': 'Fast Processing', 'desc': 'Minimize delays with efficient documentation and follow-up.'},
-              {'title': 'Personalized Support', 'desc': 'Tailored guidance for your travel and visa needs.'}
-            ] %}
-            <div class="col-md-4">
-              <div class="p-3 text-center" style="background: #ffffff; border-radius: 8px; box-shadow: 0 4px 12px rgba(0,0,0,0.08);">
-                <h6 class="fw-bold">{{ reason.title }}</h6>
-                <p class="mb-0">{{ reason.desc }}</p>
-              </div>
-            </div>
-            {% endfor %}
+        <div class="col-md-2 text-center">
+          <div class="rounded-circle bg-warning" style="width:30px; height:30px; margin:auto;"></div>
+        </div>
+        <div class="col-md-5"></div>
+        {% else %}
+        <div class="col-md-5"></div>
+        <div class="col-md-2 text-center">
+          <div class="rounded-circle bg-warning" style="width:30px; height:30px; margin:auto;"></div>
+        </div>
+        <div class="col-md-5 text-start">
+          <div class="p-4 bg-white rounded shadow-sm d-inline-block" style="max-width:95%;">
+            <h5 class="fw-bold mb-2"><i class="bi {{ step.icon }} text-warning me-2"></i>{{ step.title }}</h5>
+            <p class="mb-0">{{ step.desc }}</p>
           </div>
         </div>
+        {% endif %}
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+</section>
 
-        <!-- Call to Action -->
-        <div class="text-center">
-          <a href="https://wa.me/919079007703?text=Hello%20Tejas%20Overseas,%20I%20need%20assistance%20for%20UAE%20tourist%20visa."
-             target="_blank"
-             class="btn btn-success btn-lg">Get Visa Assistance</a>
+<!-- TOURIST VISA SERVICES -->
+<section class="py-5">
+  <div class="container">
+    <div class="text-center mb-5">
+      <h2 class="fw-bold">Tourist Visa Assistance</h2>
+      <p class="text-muted fs-5">Expert help to secure a UAE tourist visa efficiently</p>
+    </div>
+
+    <div class="row justify-content-center g-4">
+      <div class="col-md-8">
+        <div class="p-4 bg-white rounded shadow-sm">
+          <h5 class="fw-bold">Our Tourist Visa Services Include:</h5>
+          <ul class="mb-0">
+            <li>Guidance on eligibility criteria and visa type selection.</li>
+            <li>Document verification including passport, photos, and itinerary.</li>
+            <li>Form filling assistance for correct and error-free submission.</li>
+            <li>Payment guidance and secure submission of visa fees.</li>
+            <li>Follow-up with UAE authorities until visa approval.</li>
+            <li>Support in receiving the passport with UAE visa on time.</li>
+          </ul>
         </div>
-
       </div>
     </div>
   </div>
+</section>
+
+<!-- WHY CHOOSE US -->
+<section class="py-5" style="background:#f8f9fa;">
+  <div class="container">
+    <div class="text-center mb-5">
+      <h2 class="fw-bold">Why Choose Tejas Overseas?</h2>
+      <p class="text-muted fs-5">Professional, reliable, and personalized UAE visa services</p>
+    </div>
+
+    <div class="row g-4 text-center">
+      {% for reason in [
+        {'title':'Experienced Consultants','desc':'Specialized in UAE visa regulations and procedures.','icon':'bi-person-badge-fill'},
+        {'title':'Fast & Reliable','desc':'Quick and accurate processing of your application.','icon':'bi-clock-fill'},
+        {'title':'Dedicated Support','desc':'Personalized guidance at every stage of the visa process.','icon':'bi-people-fill'},
+        {'title':'Proven Success','desc':'High approval rate for our clients with smooth processing.','icon':'bi-award-fill'}
+      ] %}
+      <div class="col-md-3">
+        <div class="p-4 bg-white rounded shadow-sm h-100">
+          <i class="bi {{ reason.icon }} fs-1 text-warning mb-3"></i>
+          <h5 class="fw-bold">{{ reason.title }}</h5>
+          <p class="mb-0">{{ reason.desc }}</p>
+        </div>
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+<!-- STUDENT/CLIENT TESTIMONIALS -->
+<section class="py-5">
+  <div class="container">
+    <div class="text-center mb-5">
+      <h2 class="fw-bold">What Our Clients Say</h2>
+      <p class="text-muted fs-5">Hear from clients who successfully obtained their UAE visas with us</p>
+    </div>
+
+    <div class="row g-4 justify-content-center">
+      {% for client in [
+        {'name':'Ayesha Khan','visa':'Tourist Visa','feedback':'Tejas Overseas handled my UAE visa application flawlessly. The team guided me through each step and ensured timely approval.','image':'client1.jpg'},
+        {'name':'Rahul Mehta','visa':'Tourist Visa','feedback':'Professional and attentive service. Every step of my UAE visa process was smooth thanks to Tejas Overseas.','image':'client2.jpg'},
+        {'name':'Sana Ali','visa':'Tourist Visa','feedback':'I received my UAE visa without any hassle. The guidance and support were excellent.','image':'client3.jpg'}
+      ] %}
+      <div class="col-md-4">
+        <div class="p-4 bg-white rounded shadow-sm h-100">
+          <h6 class="fw-bold text-center">{{ client.name }}</h6>
+          <p class="text-muted text-center fst-italic mb-2">{{ client.visa }}</p>
+          <p class="text-center">"{{ client.feedback }}"</p>
+        </div>
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+<!-- CTA BOTTOM -->
+<section class="py-5 text-center">
+  <a href="https://wa.me/919079007703?text=Hello%20Tejas%20Overseas,%20I%20need%20guidance%20for%20UAE%20visa."
+     target="_blank"
+     class="btn btn-success btn-lg">Get UAE Visa Assistance Now</a>
 </section>
 
 {% endblock %}
