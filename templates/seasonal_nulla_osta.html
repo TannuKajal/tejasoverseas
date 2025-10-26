@@ -1,102 +1,86 @@
 {% extends "base.html" %}
 {% block content %}
 
-<section class="py-5" style="background: #f8f9fa;">
-  <div class="container">
-    <!-- Header -->
-    <div class="text-center mb-5">
-      <h2 class="fw-bold text-success">Seasonal Nulla Osta Appointment</h2>
-      <p class="text-muted fs-5">Professional guidance for temporary work authorizations abroad — precise, reliable, and structured.</p>
-    </div>
+<!-- HERO SECTION -->
+<section class="py-5" style="background: url('{{ url_for('static', filename='images/14.jpg') }}') center/cover no-repeat; position: relative; min-height: 60vh;"> <div style="background: rgba(0,0,0,0.5); position: absolute; top:0; left:0; width:100%; height:100%;"></div> <div class="container text-center text-white position-relative" style="z-index:2;"> <h1 class="display-5 fw-bold mb-3">Seasonal Nulla Osta Appointment</h1> <p class="fs-5 mb-4">Professional guidance for temporary work authorizations abroad — precise, reliable, and structured.</p> <a href="https://wa.me/919079007703?text=Hello%20Tejas%20Overseas,%20I%20need%20assistance%20for%20Seasonal%20Nulla%20Osta." target="_blank" class="btn btn-success btn-lg">Book Assistance Now</a> </div> </section> <!-- INTRODUCTION --> <section class="py-5" style="background:#f8f9fa;"> <div class="container"> <div class="col-lg-10 mx-auto text-center mb-5"> <p class="fs-6"> The <strong>Seasonal Nulla Osta</strong> is a mandatory government authorization for foreign nationals seeking temporary employment in regulated sectors such as agriculture, hospitality, and tourism. At <strong>Tejas Overseas</strong>, we provide end-to-end consultancy services, ensuring that every step of your application is executed with precision and adherence to official guidelines. From verifying eligibility and validating documentation to online registration and embassy coordination, our structured approach guarantees clarity, efficiency, and compliance. </p> </div>
+<!-- SERVICES -->
+<div class="mb-5">
+  <h2 class="fw-bold text-center mb-4">Our Specialized Services</h2>
+  <div class="row g-4 justify-content-center">
 
-    <!-- Hero Image -->
-    <div class="text-center mb-5">
-      <img src="{{ url_for('static', filename='images/seasonal-hero.jpg') }}" alt="Seasonal Work Abroad" class="img-fluid rounded shadow" style="max-height:400px;">
-    </div>
-
-    <!-- Intro -->
-    <div class="col-lg-10 mx-auto text-center mb-5">
-      <p class="fs-6">
-        The <strong>Seasonal Nulla Osta</strong> is a mandatory government authorization for foreign nationals seeking temporary employment in regulated sectors such as agriculture, hospitality, and tourism. At <strong>Tejas Overseas</strong>, we provide end-to-end consultancy services, ensuring that every step of your application is executed with precision and adherence to official guidelines. From verifying eligibility and validating documentation to online registration and embassy coordination, our structured approach guarantees clarity, efficiency, and compliance.
-      </p>
-    </div>
-
-    <!-- Services -->
-    <div class="mb-5">
-      <h5 class="fw-bold mb-4 text-center">Our Specialized Services</h5>
-      <div class="row g-4 justify-content-center">
-        <!-- Document Verification -->
-        <div class="col-md-10">
-          <div class="d-flex align-items-start bg-white p-4 rounded-3 shadow-sm">
-            <i class="bi bi-file-check-fill fs-1 text-success me-3"></i>
-            <div>
-              <h6 class="fw-bold mb-2">Comprehensive Document Verification</h6>
-              <p class="mb-0">Our experts meticulously examine all relevant documentation — employment contracts, identification proofs, and supporting letters — ensuring compliance with governmental standards. This minimizes the risk of rejection and ensures your application is complete and accurate.</p>
-            </div>
-          </div>
-        </div>
-
-        <!-- Online Pre-Registration -->
-        <div class="col-md-10">
-          <div class="d-flex align-items-start bg-white p-4 rounded-3 shadow-sm">
-            <i class="bi bi-laptop fs-1 text-success me-3"></i>
-            <div>
-              <h6 class="fw-bold mb-2">Digital Application Management</h6>
-              <p class="mb-0">We guide you through the official online pre-registration portals, providing step-by-step assistance with form completion, document submission, and procedural compliance. Our attention to detail ensures that your digital application is flawless and adheres to official standards.</p>
-            </div>
-          </div>
-        </div>
-
-        <!-- Appointment Booking -->
-        <div class="col-md-10">
-          <div class="d-flex align-items-start bg-white p-4 rounded-3 shadow-sm">
-            <i class="bi bi-calendar-check-fill fs-1 text-success me-3"></i>
-            <div>
-              <h6 class="fw-bold mb-2">Priority Appointment Scheduling</h6>
-              <p class="mb-0">We coordinate with relevant authorities to secure appointments efficiently. You receive timely notifications and guidance for every step, reducing delays and ensuring compliance with official schedules.</p>
-            </div>
-          </div>
-        </div>
-
-        <!-- Visa Preparation -->
-        <div class="col-md-10">
-          <div class="d-flex align-items-start bg-white p-4 rounded-3 shadow-sm">
-            <i class="bi bi-passport-fill fs-1 text-success me-3"></i>
-            <div>
-              <h6 class="fw-bold mb-2">End-to-End Visa Preparation</h6>
-              <p class="mb-0">After Nulla Osta approval, we assist with all subsequent visa procedures, including document submission at embassies, compliance checks, and interview preparation. Our structured methodology ensures that your transition from approval to employment is smooth and stress-free.</p>
-            </div>
-          </div>
+    <!-- Document Verification -->
+    <div class="col-md-10">
+      <div class="d-flex align-items-start bg-white p-4 rounded-3 shadow-sm">
+        <i class="bi bi-file-check-fill fs-1 text-success me-3"></i>
+        <div>
+          <h5 class="fw-bold mb-2">Comprehensive Document Verification</h5>
+          <p class="mb-0">Our experts meticulously examine all relevant documentation — employment contracts, identification proofs, and supporting letters — ensuring compliance with governmental standards. This minimizes the risk of rejection and ensures your application is complete and accurate.</p>
         </div>
       </div>
     </div>
 
-    <!-- Professional Testimonials -->
-    <div class="mb-5">
-      <h5 class="fw-bold mb-4 text-center">Client Success Stories</h5>
-      <div class="row g-4 justify-content-center">
-        <div class="col-md-6">
-          <div class="p-4 bg-white rounded-3 shadow-sm">
-            <p class="fst-italic">“Tejas Overseas provided unparalleled professional support throughout the entire Nulla Osta process. Every document, every step, was handled with expertise and precision. Their guidance made the complex process entirely manageable.”</p>
-            <p class="fw-bold mb-0">— Aditi S., India</p>
-          </div>
-        </div>
-        <div class="col-md-6">
-          <div class="p-4 bg-white rounded-3 shadow-sm">
-            <p class="fst-italic">“From meticulous document review to embassy coordination, Tejas Overseas demonstrated professionalism and reliability. I received timely updates and felt fully supported at every stage.”</p>
-            <p class="fw-bold mb-0">— Rohit V., India</p>
-          </div>
+    <!-- Online Pre-Registration -->
+    <div class="col-md-10">
+      <div class="d-flex align-items-start bg-white p-4 rounded-3 shadow-sm">
+        <i class="bi bi-laptop fs-1 text-success me-3"></i>
+        <div>
+          <h5 class="fw-bold mb-2">Digital Application Management</h5>
+          <p class="mb-0">We guide you through the official online pre-registration portals, providing step-by-step assistance with form completion, document submission, and procedural compliance. Our attention to detail ensures that your digital application is flawless and adheres to official standards.</p>
         </div>
       </div>
     </div>
 
-    <!-- Call to Action -->
-    <div class="text-center">
-      <a href="https://wa.me/919079007703?text=Hello%20Tejas%20Overseas,%20I%20need%20assistance%20for%20Seasonal%20Nulla%20Osta."
-         target="_blank"
-         class="btn btn-success btn-lg">Book Professional Assistance</a>
+    <!-- Appointment Booking -->
+    <div class="col-md-10">
+      <div class="d-flex align-items-start bg-white p-4 rounded-3 shadow-sm">
+        <i class="bi bi-calendar-check-fill fs-1 text-success me-3"></i>
+        <div>
+          <h5 class="fw-bold mb-2">Priority Appointment Scheduling</h5>
+          <p class="mb-0">We coordinate with relevant authorities to secure appointments efficiently. You receive timely notifications and guidance for every step, reducing delays and ensuring compliance with official schedules.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Visa Preparation -->
+    <div class="col-md-10">
+      <div class="d-flex align-items-start bg-white p-4 rounded-3 shadow-sm">
+        <i class="bi bi-passport-fill fs-1 text-success me-3"></i>
+        <div>
+          <h5 class="fw-bold mb-2">End-to-End Visa Preparation</h5>
+          <p class="mb-0">After Nulla Osta approval, we assist with all subsequent visa procedures, including document submission at embassies, compliance checks, and interview preparation. Our structured methodology ensures that your transition from approval to employment is smooth and stress-free.</p>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<!-- TESTIMONIALS -->
+<div class="mb-5">
+  <h2 class="fw-bold text-center mb-4">Client Success Stories</h2>
+  <div class="row g-4 justify-content-center">
+    <div class="col-md-6">
+      <div class="p-4 bg-white rounded-3 shadow-sm">
+        <p class="fst-italic">“Tejas Overseas provided unparalleled professional support throughout the entire Nulla Osta process. Every document, every step, was handled with expertise and precision. Their guidance made the complex process entirely manageable.”</p>
+        <p class="fw-bold mb-0">— Aditi S., India</p>
+      </div>
+    </div>
+    <div class="col-md-6">
+      <div class="p-4 bg-white rounded-3 shadow-sm">
+        <p class="fst-italic">“From meticulous document review to embassy coordination, Tejas Overseas demonstrated professionalism and reliability. I received timely updates and felt fully supported at every stage.”</p>
+        <p class="fw-bold mb-0">— Rohit V., India</p>
+      </div>
     </div>
   </div>
-</section>
+</div>
+
+<!-- CTA -->
+<div class="text-center">
+  <a href="https://wa.me/919079007703?text=Hello%20Tejas%20Overseas,%20I%20need%20assistance%20for%20Seasonal%20Nulla%20Osta."
+     target="_blank"
+     class="btn btn-success btn-lg">Book Professional Assistance</a>
+</div>
+
+</div> </section>
 
 {% endblock %}

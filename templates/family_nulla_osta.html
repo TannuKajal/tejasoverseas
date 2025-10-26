@@ -1,103 +1,85 @@
 {% extends "base.html" %}
 {% block content %}
 
-<section class="py-5" style="background: #f8f9fa;">
-  <div class="container">
-    <!-- Header -->
-    <div class="text-center mb-5">
-      <h2 class="fw-bold text-danger">Family Reunion Nulla Osta Appointment</h2>
-      <p class="text-muted fs-5">Expert guidance for reunification of families in Italy with professionalism and care.</p>
-    </div>
+<!-- HERO SECTION -->
+<section class="py-5" style="background: url('{{ url_for('static', filename='images/img_1.png') }}') center/cover no-repeat; position: relative; min-height: 60vh;"> <div style="background: rgba(0,0,0,0.55); position:absolute; top:0; left:0; width:100%; height:100%;"></div> <div class="container text-center text-white position-relative" style="z-index:2;"> <h1 class="display-5 fw-bold mb-3">Family Reunion Nulla Osta Appointment</h1> <p class="fs-5 mb-4">Expert guidance for reunification of families in Italy — with compassion, clarity, and care.</p> <a href="https://wa.me/919079007703?text=Hello%20Tejas%20Overseas,%20I%20need%20assistance%20for%20Family%20Reunion%20Nulla%20Osta." target="_blank" class="btn btn-danger btn-lg">Book Assistance Now</a> </div> </section> <!-- INTRODUCTION --> <section class="py-5" style="background:#f8f9fa;"> <div class="container"> <div class="col-lg-10 mx-auto text-center mb-5"> <p class="fs-6"> The <strong>Family Reunion Nulla Osta</strong> is required for foreign nationals wishing to reunite with their family members legally residing in Italy. <strong>Tejas Overseas</strong> provides a complete consultancy solution — from document review, eligibility verification, and online submissions to embassy appointments and compliance checks. Our structured approach ensures the process is efficient, transparent, and stress-free. </p> </div>
+<!-- SERVICES -->
+<div class="mb-5">
+  <h2 class="fw-bold text-center mb-4 text-danger">Our Family Reunion Services</h2>
+  <div class="row g-4 justify-content-center">
 
-    <!-- Hero Image -->
-    <div class="text-center mb-5">
-      <img src="{{ url_for('static', filename='images/family-hero.jpg') }}" alt="Family Reunion Visa Italy" class="img-fluid rounded shadow" style="max-height:400px;">
-    </div>
-
-    <!-- Intro -->
-    <div class="col-lg-10 mx-auto text-center mb-5">
-      <p class="fs-6">
-        The <strong>Family Reunion Nulla Osta</strong> is required for foreign nationals wishing to reunite with their family members legally residing in Italy.
-        <strong>Tejas Overseas</strong> provides a complete consultancy solution — from document review, eligibility verification, and online submissions to embassy appointments and compliance checks. Our structured approach ensures the process is efficient, transparent, and stress-free.
-      </p>
-    </div>
-
-    <!-- Services -->
-    <div class="mb-5">
-      <h5 class="fw-bold mb-4 text-center">Our Family Reunion Services</h5>
-      <div class="row g-4 justify-content-center">
-        <!-- Document Verification -->
-        <div class="col-md-10">
-          <div class="d-flex align-items-start bg-white p-4 rounded-3 shadow-sm">
-            <i class="bi bi-file-check-fill fs-1 text-danger me-3"></i>
-            <div>
-              <h6 class="fw-bold mb-2">Eligibility & Document Verification</h6>
-              <p class="mb-0">We review all family records, identification, and legal documents to ensure compliance with Italian and embassy regulations.</p>
-            </div>
-          </div>
-        </div>
-
-        <!-- Online Pre-Registration -->
-        <div class="col-md-10">
-          <div class="d-flex align-items-start bg-white p-4 rounded-3 shadow-sm">
-            <i class="bi bi-laptop fs-1 text-danger me-3"></i>
-            <div>
-              <h6 class="fw-bold mb-2">Digital Submission Assistance</h6>
-              <p class="mb-0">Step-by-step guidance in completing online applications and uploading documents correctly through official portals.</p>
-            </div>
-          </div>
-        </div>
-
-        <!-- Appointment Booking -->
-        <div class="col-md-10">
-          <div class="d-flex align-items-start bg-white p-4 rounded-3 shadow-sm">
-            <i class="bi bi-calendar-check-fill fs-1 text-danger me-3"></i>
-            <div>
-              <h6 class="fw-bold mb-2">Appointment Scheduling & Coordination</h6>
-              <p class="mb-0">We ensure appointments are booked promptly and provide clear instructions for embassy meetings, interviews, and document verification.</p>
-            </div>
-          </div>
-        </div>
-
-        <!-- Compliance Guidance -->
-        <div class="col-md-10">
-          <div class="d-flex align-items-start bg-white p-4 rounded-3 shadow-sm">
-            <i class="bi bi-passport-fill fs-1 text-danger me-3"></i>
-            <div>
-              <h6 class="fw-bold mb-2">End-to-End Compliance & Support</h6>
-              <p class="mb-0">We assist applicants in understanding requirements, adhering to legal procedures, and ensuring successful reunification with family members in Italy.</p>
-            </div>
-          </div>
+    <!-- Document Verification -->
+    <div class="col-md-10">
+      <div class="d-flex align-items-start bg-white p-4 rounded-3 shadow-sm">
+        <i class="bi bi-file-check-fill fs-1 text-danger me-3"></i>
+        <div>
+          <h5 class="fw-bold mb-2">Eligibility & Document Verification</h5>
+          <p class="mb-0">We review all family records, identification, and legal documents to ensure compliance with Italian and embassy regulations.</p>
         </div>
       </div>
     </div>
 
-    <!-- Professional Testimonials -->
-    <div class="mb-5">
-      <h5 class="fw-bold mb-4 text-center">Client Success Stories</h5>
-      <div class="row g-4 justify-content-center">
-        <div class="col-md-6">
-          <div class="p-4 bg-white rounded-3 shadow-sm">
-            <p class="fst-italic">“Tejas Overseas handled every aspect of my family reunion application with precision. They made a potentially complicated process seamless and clear.”</p>
-            <p class="fw-bold mb-0">— Sunita R., India</p>
-          </div>
-        </div>
-        <div class="col-md-6">
-          <div class="p-4 bg-white rounded-3 shadow-sm">
-            <p class="fst-italic">“Professional, responsive, and knowledgeable. Their guidance gave me confidence that my family would be reunited without delays or errors.”</p>
-            <p class="fw-bold mb-0">— Arjun D., India</p>
-          </div>
+    <!-- Online Submission -->
+    <div class="col-md-10">
+      <div class="d-flex align-items-start bg-white p-4 rounded-3 shadow-sm">
+        <i class="bi bi-laptop fs-1 text-danger me-3"></i>
+        <div>
+          <h5 class="fw-bold mb-2">Digital Submission Assistance</h5>
+          <p class="mb-0">Step-by-step guidance in completing online applications and uploading documents correctly through official portals.</p>
         </div>
       </div>
     </div>
 
-    <!-- Call to Action -->
-    <div class="text-center">
-      <a href="https://wa.me/919079007703?text=Hello%20Tejas%20Overseas,%20I%20need%20assistance%20for%20Family%20Reunion%20Nulla%20Osta."
-         target="_blank"
-         class="btn btn-danger btn-lg">Book Professional Assistance</a>
+    <!-- Appointment Booking -->
+    <div class="col-md-10">
+      <div class="d-flex align-items-start bg-white p-4 rounded-3 shadow-sm">
+        <i class="bi bi-calendar-check-fill fs-1 text-danger me-3"></i>
+        <div>
+          <h5 class="fw-bold mb-2">Appointment Scheduling & Coordination</h5>
+          <p class="mb-0">We ensure appointments are booked promptly and provide clear instructions for embassy meetings, interviews, and document verification.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Compliance Guidance -->
+    <div class="col-md-10">
+      <div class="d-flex align-items-start bg-white p-4 rounded-3 shadow-sm">
+        <i class="bi bi-passport-fill fs-1 text-danger me-3"></i>
+        <div>
+          <h5 class="fw-bold mb-2">End-to-End Compliance & Support</h5>
+          <p class="mb-0">We assist applicants in understanding requirements, adhering to legal procedures, and ensuring successful reunification with family members in Italy.</p>
+        </div>
+      </div>
     </div>
   </div>
-</section>
+</div>
+
+<!-- TESTIMONIALS -->
+<div class="mb-5">
+  <h2 class="fw-bold mb-4 text-center text-danger">Client Success Stories</h2>
+  <div class="row g-4 justify-content-center">
+    <div class="col-md-6">
+      <div class="p-4 bg-white rounded-3 shadow-sm">
+        <p class="fst-italic">“Tejas Overseas handled every aspect of my family reunion application with precision. They made a potentially complicated process seamless and clear.”</p>
+        <p class="fw-bold mb-0">— Sunita R., India</p>
+      </div>
+    </div>
+    <div class="col-md-6">
+      <div class="p-4 bg-white rounded-3 shadow-sm">
+        <p class="fst-italic">“Professional, responsive, and knowledgeable. Their guidance gave me confidence that my family would be reunited without delays or errors.”</p>
+        <p class="fw-bold mb-0">— Arjun D., India</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- CTA -->
+<div class="text-center">
+  <a href="https://wa.me/919079007703?text=Hello%20Tejas%20Overseas,%20I%20need%20assistance%20for%20Family%20Reunion%20Nulla%20Osta."
+     target="_blank"
+     class="btn btn-danger btn-lg">Book Professional Assistance</a>
+</div>
+
+</div> </section>
 
 {% endblock %}
